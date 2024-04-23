@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #7c7981;
 }
 
 .task-list {
@@ -15,7 +16,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin: 8px;
+  padding: 8px;
+  border-radius: 2px;
+  border: 1px solid lightgrey;
+  background-color: #a7889d;
 }
 
 .task button {
@@ -30,9 +35,11 @@
 
 button {
   padding: 10px 20px;
+  margin: 10px;
   background-color: #007bff;
   border: none;
   cursor: pointer;
+  border-radius: 40px;
 }
 
 button:hover {

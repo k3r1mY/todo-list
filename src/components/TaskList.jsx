@@ -1,20 +1,21 @@
-import React from 'react'
-import Task from './Task'
+import React from 'react';
+import Task from './Task';
 
-const TaskList = ({tasks, completeTask, removeTask}) => {
+const TaskList = ({ tasks, completeTask, removeTask, updateTask }) => {
   return (
     <div>
-        {tasks.map((task , index)=> (
-        <Task key = {index}
-        index = {index}
-        task = {task}
-        completeTask = {completeTask}
-        removeTask = {removeTask}
+      {tasks.map((task, index) => (
+        <Task
+          key={index}
+          task={task}
+          index={index}
+          completeTask={completeTask}
+          removeTask={removeTask}
+          updateTask={updateTask}
         />
-    ))}
+      ))}
     </div>
-  
-);
+  );
 };
 
-export default TaskList
+export default TaskList;
