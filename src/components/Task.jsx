@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Task = ({task,index,completeTask,removeTask}) => {
+
+  const [isEditing, setIsEditing] = useState(false);
+  
   return (
         <div className='task' style = {{textDecoration : task.completed ? 'line-through': ''}}>
         {task.text}

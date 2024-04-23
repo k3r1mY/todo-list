@@ -1,11 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
 
 function App() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(
+    JSON.parse(localStorage.getItem("tasks")) || []
+  );
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   const addTask = (text) => {
     const newTasks = [...tasks, { text, completed: false }];
@@ -34,6 +40,12 @@ function App() {
           completeTask={completeTask}
           removeTask={removeTask}
         />
+        <div>
+          <p>
+            Total tasks remaining:{" "}
+            {tasks.filter((task) => !task.completed).length}
+          </p>
+        </div>
       </div>
     </div>
   );
