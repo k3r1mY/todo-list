@@ -1,4 +1,6 @@
 import React,{useState} from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const TaskForm = ({addTask}) => {
     const [value,setValue] = useState('');
@@ -14,7 +16,7 @@ const TaskForm = ({addTask}) => {
         <form onSubmit={handleSubmit}>
             <input type="text" className='input' value={value}
             onChange={(e) => setValue(e.target.value)} placeholder='Add new task' />
-            <button type = "submit"> Add</button>
+            <button type = "submit"> <FontAwesomeIcon icon={faPlus} /></button>
         </form>
     )
 }
